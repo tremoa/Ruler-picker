@@ -1,5 +1,6 @@
 package com.elsunhoty.rulerpicker.lib;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -114,4 +115,10 @@ public class RulerView extends FrameLayout {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
+    public void setOnTouchListener(OnTouchListener onTouchListener) {
+        if (rulerScroller != null) {
+            rulerScroller.setOnTouchListener(onTouchListener);
+        }
+    }
 }
