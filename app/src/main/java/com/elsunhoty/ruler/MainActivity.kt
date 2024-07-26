@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             tvOnRulerValueChanges.text =
                 "onRulerValueChanges : $value from user $fromUser"
         }
+        viewRuler.setOnTouchListener { view, motionEvent ->
+            Log.d(TAG, "$$$ " + view.scrollX + " " + view.scrollY)
+            return@setOnTouchListener false
+        }
         btnCurrentValue.setOnClickListener { _ ->
             val currentValue = viewRuler.currentValue
             tvCurrentValue.text =
